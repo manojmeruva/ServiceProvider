@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.blogapp.data.UserEntity;
+import com.example.blogapp.models.UserEntity;
 import com.example.blogapp.repository.UserRepository;
 
 @Service

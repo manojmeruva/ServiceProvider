@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.blogapp.data.UserEntity;
+import com.example.blogapp.models.UserEntity;
 import com.example.blogapp.repository.UserRepository;
 import com.example.blogapp.service.UserService;
 
@@ -25,8 +25,7 @@ public class BlogControllers {
    @Autowired
     private UserService userService;
 
-    @Autowired
-    private UserRepository userRepository;
+  
 
     @PostMapping("/register")
     public ResponseEntity<UserEntity> registerUser(@RequestBody @Validated UserEntity user) {
@@ -43,9 +42,12 @@ public class BlogControllers {
         
         return ResponseEntity.ok(loggedInUser);
     }
-
+    
+    
     @GetMapping()
     public List<UserEntity> getUsers(){
-        return userRepository.findAll();
+        return userService.userRepository.findAll();
     }
+
+    
 }
