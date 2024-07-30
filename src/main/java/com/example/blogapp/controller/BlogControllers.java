@@ -44,7 +44,7 @@ public class BlogControllers {
     }
     
     
-    @GetMapping()
+    @GetMapping("/")
     public List<UserEntity> getUsers(){
         return userService.userRepository.findAll();
     }

@@ -19,27 +19,28 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "userform")
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class UserDetailsEntity {
     @Id
     private String id;
 
-    @NotBlank
-    private String username;
+    
+    private String userName;
 
-    @NotBlank
+   
     private String email;
 
-    private String firstname;
+    private String firstName;
 
-    private String lastname;
+    private String lastName;
     
     @Pattern(regexp = "^\\+?[0-9. ()-]{7,25}$", message = "Phone number is invalid")
-    private String phonenumber;
+    private String phoneNumber;
 
-    private String jobtitle;
+    private String jobTitle;
 
-    private String companyname;
+    private String companyName;
 
-    private String brief;
+    private String bio;
 }
 

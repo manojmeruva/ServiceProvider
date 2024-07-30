@@ -21,7 +21,9 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
             .authorizeRequests()
-            .requestMatchers("/api/users/register", "/api/users/login","/api/userform/register").permitAll()
+            .requestMatchers("/api/users/register", "/api/users/login","/api/userform/register",
+            "/swagger-ui.html",
+             "/swagger-ui/**", "/v3/api-docs/**").permitAll()
             .anyRequest().authenticated()
             .and()
             .cors();

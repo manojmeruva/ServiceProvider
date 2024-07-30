@@ -9,7 +9,7 @@ import com.example.blogapp.models.UserEntity;
 @Repository
 public interface UserRepository extends MongoRepository<UserEntity,String>{
 
-    UserEntity findByUsername(String username);
+    UserEntity findByUsername(String userName);
 
    
 
